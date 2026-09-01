@@ -14,63 +14,64 @@ export const chapters: Chapter[] = [
     id: "signal",
     number: "00",
     label: "SIGNAL",
-    eyebrow: "49.6956 N / LETHBRIDGE, CANADA",
+    eyebrow: "Munich / Germany",
     title: "NIKLAS",
     titleSecondary: "KOST",
-    description: "COMPUTER SCIENCE × MATHEMATICS",
+    description: "COMPUTER SCIENCE / LMU MÜNCHEN",
     align: "left",
   },
   {
     id: "identity",
     number: "01",
     label: "IDENTITY",
-    eyebrow: "SYSTEMS / DATA / AUTOMATION",
+    eyebrow: "C++ / SYSTEMS / SECURITY / SOFTWARE",
     title: "INFORMATION",
     titleSecondary: "UNDER GRAVITY",
-    description: "I work where software, data and infrastructure meet.",
+    description:
+      "I build software around systems, cybersecurity, and practical problem solving.",
     align: "right",
   },
   {
     id: "history",
     number: "02",
     label: "ORBITAL HISTORY",
-    eyebrow: "AGRICULTURE & AGRI-FOOD CANADA / LETHBRIDGE, ALBERTA",
-    title: "THREE",
-    titleSecondary: "ORBITAL STATES",
+    eyebrow: "SELECTED PROJECTS / GITHUB",
+    title: "BUILD",
+    titleSecondary: "WITHOUT NOISE",
     description:
-      "Scientific data evolved into automation, pipelines and production infrastructure.",
+      "C++ tools, CLI utilities, experiments, and systems-focused projects.",
     align: "left",
   },
   {
     id: "infrastructure",
     number: "03",
     label: "INFRASTRUCTURE",
-    eyebrow: "TRACE / VALIDATE / TEST / AUTOMATE / REPORT",
+    eyebrow: "C++ / GO / JS / HTML / SHELL",
     title: "COMPLEXITY",
-    titleSecondary: "MADE DETERMINISTIC",
+    titleSecondary: "MADE TANGIBLE",
     description:
-      "Runtime paths, legacy data and CI/CD reorganized into systems that can be understood and trusted.",
+      "I like turning rough ideas into reliable tools, interfaces, and small systems.",
     align: "right",
   },
   {
     id: "algorithm",
     number: "04",
     label: "ALGORITHM FIELD",
-    eyebrow: "ICPC / 2024–2025 / UNIVERSITY OF CALGARY",
+    eyebrow: "PROBLEM SOLVING / C++ / COMPETITIVE PROGRAMMING",
     title: "ONE PATH",
     titleSecondary: "RESOLVES",
-    description: "Regional contestant. Top 10. Three-person team.",
+    description:
+      "Focused on correctness, clarity, and efficient problem-solving.",
     align: "left",
   },
   {
     id: "education",
     number: "05",
-    label: "DUAL SYSTEM",
-    eyebrow: "UNIVERSITY OF LETHBRIDGE / SEPTEMBER 2023–CURRENT",
+    label: "EDUCATION",
+    eyebrow: "LMU MÜNCHEN / COMPUTER SCIENCE",
     title: "COMPUTATION",
     titleSecondary: "× MATHEMATICS",
-    description:
-      "BSc Computer Science. Dual Degree Mathematics. Co-operative Education.",
+    description: "Studying computer science at LMU Munich.",
     align: "right",
   },
   {
@@ -80,72 +81,71 @@ export const chapters: Chapter[] = [
     eyebrow: "BEYOND THE SYSTEM",
     title: "DISTANT",
     titleSecondary: "SIGNALS",
-    description: "Soccer. Track & field. Piano. Recorder. Gaming.",
+    description: "Programming, systems, gaming, and practical experimentation.",
     align: "left",
   },
   {
     id: "horizon",
     number: "07",
     label: "HORIZON",
-    eyebrow: "LETHBRIDGE, ALBERTA, CANADA",
+    eyebrow: "MUNICH, GERMANY",
     title: "THE NEXT",
-    titleSecondary: "PROBLEM",
-    description: "The field resolves. The work continues.",
+    titleSecondary: "PROJECT",
+    description: "Building tools, systems, and software with intent.",
     align: "right",
   },
 ];
 
 export const careerAnchors = [
   {
-    period: "2023 — 2025",
-    role: "FSWEP",
+    period: "2024 — CURRENT",
+    role: "FTXUI-FlySim",
     detail:
-      "SCIENTIFIC DATA / HERBARIUM DIGITIZATION / DARWIN CORE / R-SHINY / BIOINFORMATICS / DATA QUALITY",
+      "C++ / TUI / SIMULATION / REAL-TIME FLIGHT MECHANICS / INTERACTIVE CONTROL",
   },
   {
-    period: "JAN — APR 2026",
-    role: "CO-OP I",
+    period: "2025",
+    role: "SafeGuard",
     detail:
-      "GITLAB CI/CD / SELF-HOSTED RUNNERS / TESTING / ETL / SCHEMA VALIDATION / AUTOMATION / PYTHON",
+      "GO / CLI / FILE ENCRYPTION / CRYPTOGRAPHY LEARNING / CROSS-PLATFORM TOOLING",
   },
   {
-    period: "MAY — AUG 2026",
-    role: "CO-OP II",
-    detail:
-      "LEGACY SCIENTIFIC INFRASTRUCTURE / SAS + PYTHON / SERVER MIGRATION / RUNTIME TRACING / DATA LINEAGE / PRODUCTION TRIAGE / AUTOMATED REPORTING",
+    period: "2025",
+    role: "LazyMouse",
+    detail: "C++ / WINDOWS INPUT / XINPUT / HCI / KEYBOARD + MOUSE MAPPING",
+  },
+  {
+    period: "2025",
+    role: "Lamidi",
+    detail: "HTML / JS / MIDI / LABY.NET / CLIENT-SIDE AUDIO + INTERACTION",
   },
 ];
 
 export const infrastructureSignals = [
-  "INGEST",
-  "TRACE",
-  "VALIDATE",
-  "TEST",
-  "AUTOMATE",
-  "REPORT",
+  "C++",
+  "GO",
+  "CLI",
+  "SYSTEMS",
+  "DEBUGGING",
+  "TOOLS",
 ];
 
 export const algorithmSignals = [
   "DATA STRUCTURES",
-  "GRAPH ALGORITHMS",
-  "DYNAMIC PROGRAMMING",
-  "GREEDY METHODS",
+  "LINUX",
+  "COMPETITIVE PROGRAMMING",
+  "C++",
   "DEBUGGING",
-  "COMPLEXITY ANALYSIS",
+  "Pentesting",
 ];
 
 export const humanSignals = [
-  { title: "SOCCER", detail: "THREE YEARS / TIER-1 LFC / LETHBRIDGE" },
-  {
-    title: "TRACK & FIELD",
-    detail:
-      "LONG + TRIPLE JUMP / SOUTHERN ALBERTA 1ST + 2ND / 7TH PROVINCIALLY",
-  },
-  { title: "MUSIC", detail: "PIANO / RECORDER" },
-  { title: "GAMING", detail: "" },
+  { title: "PROGRAMMING", detail: "SYSTEMS / TOOLS / INTERFACES" },
+  { title: "CYBERSECURITY", detail: "CRYPTOGRAPHY + SECURITY TOOLS" },
+  { title: "SYSTEMS", detail: "C++ / CLI / INTERACTION" },
 ];
 
 export const contact = {
-  email: "mani.maramimilani@uleth.ca",
-  linkedin: "https://ca.linkedin.com/in/mani-marami-milani-8713a7309",
+  email: "niklasdioxid@gmail.com",
+  linkedin: "https://www.linkedin.com/in/niklas-kost-6376063a7/",
 };

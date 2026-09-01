@@ -63,7 +63,7 @@ function ChapterDetails({
         <i aria-hidden="true">×</i>
         <div>
           <span>02</span>
-          <strong>DUAL DEGREE MATHEMATICS</strong>
+          <strong></strong>
         </div>
       </div>
     );
