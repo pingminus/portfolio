@@ -4,7 +4,7 @@
 
 This repository will become the personal portfolio of **Niklas Kost**, a Computer Science and Mathematics student whose professional experience spans software, scientific-data infrastructure, automation, CI/CD, ETL-style pipelines, systems work, competitive programming, and technical problem solving.
 
-The Site must be both a memorable portfolio and an interactive demonstration of technical ambition. The visual experience is part of the work; this must not become a conventional resume site.
+The site must be both a memorable portfolio and an interactive demonstration of technical ambition. The visual experience is part of the work; this must not become a conventional resume site.
 
 ## Governing concept
 
