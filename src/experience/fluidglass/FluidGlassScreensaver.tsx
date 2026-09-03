@@ -18,6 +18,9 @@ interface FluidGlassScreensaverProps {
 }
 
 const FADE_OUT_DURATION = 3000;
+const GERMANY_FORM_DURATION = 900;
+const GERMANY_HOLD_DURATION = 1800;
+const GERMANY_DISSOLVE_DURATION = 1200;
 
 function createRenderTarget(
   isDelayed: boolean,
@@ -64,6 +67,7 @@ export function FluidGlassScreensaver({ active }: FluidGlassScreensaverProps) {
     let velocityTemp: RenderTarget;
     let frame = 0;
     let stopTimer: number | undefined;
+    let introStartedAt = 0;
     let running = false;
     let initialized = false;
     let simulationSize: [number, number] = [512, 512];
@@ -75,6 +79,13 @@ export function FluidGlassScreensaver({ active }: FluidGlassScreensaverProps) {
     let hasOrientation = false;
     let previousTouch: { x: number; y: number } | undefined;
     const iteration = getUrlParam("iteration", 10, Number);
+    const germanyTimeFormatter = new Intl.DateTimeFormat("de-DE", {
+      timeZone: "Europe/Berlin",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
 
     const renderForeground = (
       canvas: HTMLCanvasElement,
@@ -84,35 +95,52 @@ export function FluidGlassScreensaver({ active }: FluidGlassScreensaverProps) {
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.textAlign = "center";
       context.textBaseline = "middle";
-      const now = new Date();
+      const elapsed = performance.now() - introStartedAt;
+      const germanyTime = germanyTimeFormatter.format(new Date());
+      const germanyStart = 0;
+      const germanyHoldStart = germanyStart + GERMANY_FORM_DURATION;
+      const clockStart =
+        germanyHoldStart + GERMANY_HOLD_DURATION + GERMANY_DISSOLVE_DURATION;
+
+      if (elapsed >= germanyStart && elapsed < clockStart) {
+        const formProgress = Math.min(
+          1,
+          (elapsed - germanyStart) / GERMANY_FORM_DURATION,
+        );
+        const dissolveProgress =
+          elapsed > germanyHoldStart + GERMANY_HOLD_DURATION
+            ? Math.min(
+                1,
+                (elapsed - germanyHoldStart - GERMANY_HOLD_DURATION) /
+                  GERMANY_DISSOLVE_DURATION,
+              )
+            : 0;
+        const titleProgress = formProgress * (1 - dissolveProgress);
+        const scale = 0.82 + Math.min(1, formProgress) * 0.18;
+        context.save();
+        context.globalAlpha = titleProgress;
+        context.translate(canvas.width / 2, canvas.height / 2);
+        context.scale(scale, scale);
+        context.font = `700 ${Math.round(Math.min(canvas.width / 5.2, canvas.height / 2.8))}px Instrument Sans Variable`;
+        context.fillText("GERMANY", 0, 0);
+        context.restore();
+      }
+
+      context.globalAlpha =
+        elapsed < clockStart ? 0 : Math.min(1, (elapsed - clockStart) / 700);
       if (canvas.width > canvas.height * 1.5) {
         const size = canvas.width / 8;
         context.font = `${Math.round(size)}px Roboto Mono`;
-        const time = [
-          now.getHours().toString().padStart(2, "0"),
-          now.getMinutes().toString().padStart(2, "0"),
-          now.getSeconds().toString().padStart(2, "0"),
-        ].join(":");
-        context.fillText(time, canvas.width / 2, canvas.height / 2);
+        context.fillText(germanyTime, canvas.width / 2, canvas.height / 2);
       } else {
         const size = canvas.height / 4;
         context.font = `${Math.round(size)}px Roboto Mono`;
-        context.fillText(
-          now.getHours().toString().padStart(2, "0"),
-          canvas.width / 2,
-          canvas.height / 2 - size,
-        );
-        context.fillText(
-          now.getMinutes().toString().padStart(2, "0"),
-          canvas.width / 2,
-          canvas.height / 2,
-        );
-        context.fillText(
-          now.getSeconds().toString().padStart(2, "0"),
-          canvas.width / 2,
-          canvas.height / 2 + size,
-        );
+        const [hours, minutes, seconds] = germanyTime.split(":");
+        context.fillText(hours, canvas.width / 2, canvas.height / 2 - size);
+        context.fillText(minutes, canvas.width / 2, canvas.height / 2);
+        context.fillText(seconds, canvas.width / 2, canvas.height / 2 + size);
       }
+      context.globalAlpha = 1;
     };
 
     const resize = () => {
@@ -258,6 +286,7 @@ export function FluidGlassScreensaver({ active }: FluidGlassScreensaverProps) {
       root.appendChild(gl.canvas);
       renderer.setSize(window.innerWidth, window.innerHeight);
       resize();
+      introStartedAt = performance.now();
       running = true;
       window.addEventListener("mousemove", onMouseMove);
       window.addEventListener("touchmove", onTouchMove, { passive: false });

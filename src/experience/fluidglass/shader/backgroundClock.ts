@@ -20,15 +20,25 @@ const shader = createShader(vertex, fragment, {
 
 export default function (target, parallax) {
   const now = new Date();
+  const parts = new Intl.DateTimeFormat("de-DE", {
+    timeZone: "Europe/Berlin",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  }).formatToParts(now);
+  const getPart = (type: string) =>
+    Number(parts.find((part) => part.type === type)?.value ?? 0);
+  const hours = getPart("hour") % 24;
+  const minutes = getPart("minute");
+  const seconds = getPart("second");
   shader(target, {
     parallax,
     uSize: [target.width, target.height],
     clockHands: [
-      now.getHours() + now.getMinutes() / 60 + now.getSeconds() / 60 / 60,
-      now.getMinutes() +
-        now.getSeconds() / 60 +
-        now.getMilliseconds() / 1000 / 60,
-      now.getSeconds() + now.getMilliseconds() / 1000,
+      hours + minutes / 60 + seconds / 60 / 60,
+      minutes + seconds / 60 + now.getMilliseconds() / 1000 / 60,
+      seconds + now.getMilliseconds() / 1000,
     ],
   });
 }
