@@ -81,7 +81,7 @@ export const chapters: Chapter[] = [
     eyebrow: "BEYOND THE SYSTEM",
     title: "DISTANT",
     titleSecondary: "SIGNALS",
-    description: "Programming, systems, gaming, and practical experimentation.",
+    description: "Programming, systems, and practical experimentation.",
     align: "left",
   },
   {
