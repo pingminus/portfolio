@@ -528,11 +528,48 @@ a:focus-visible {
 
 .career-orbits li {
   position: relative;
+}
+
+.career-orbits a {
   display: grid;
   grid-template-columns: 28px 1fr;
   gap: 4px 10px;
   padding-top: 13px;
   border-top: 1px solid rgba(242, 240, 233, 0.2);
+  color: var(--starlight);
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.career-orbits a:hover,
+.career-orbits a:focus-visible {
+  border-color: rgba(232, 161, 91, 0.58);
+  color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.career-orbits a:focus-visible {
+  outline: 1px solid rgba(232, 161, 91, 0.75);
+  outline-offset: 6px;
+}
+
+.career-orbits i {
+  grid-column: 2;
+  color: var(--ion);
+  font:
+    400 10px/1 "IBM Plex Mono",
+    monospace;
+  font-style: normal;
+  opacity: 0.72;
+  transition: opacity 180ms ease;
+}
+
+.career-orbits a:hover i,
+.career-orbits a:focus-visible i {
+  opacity: 1;
 }
 
 .career-orbits__index {
@@ -848,7 +885,7 @@ a:focus-visible {
     align-self: end;
   }
 
-  .career-orbits li {
+  .career-orbits a {
     grid-template-columns: 22px 1fr;
     gap: 2px 7px;
     padding-top: 6px;

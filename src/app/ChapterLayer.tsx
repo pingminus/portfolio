@@ -22,14 +22,22 @@ function ChapterDetails({
     return (
       <ol
         className="career-orbits"
-        aria-label="Agriculture and Agri-Food Canada experience"
+        aria-label="Selected GitHub projects"
       >
         {careerAnchors.map((anchor, anchorIndex) => (
           <li key={anchor.role}>
-            <span className="career-orbits__index">0{anchorIndex + 1}</span>
-            <time>{anchor.period}</time>
-            <strong>{anchor.role}</strong>
-            <p>{anchor.detail}</p>
+            <a
+              href={anchor.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open ${anchor.role} on GitHub`}
+            >
+              <span className="career-orbits__index">0{anchorIndex + 1}</span>
+              <time>{anchor.period}</time>
+              <strong>{anchor.role}</strong>
+              <p>{anchor.detail}</p>
+              <i aria-hidden="true">↗</i>
+            </a>
           </li>
         ))}
       </ol>
@@ -95,6 +103,10 @@ function ChapterDetails({
         </button>
         <a href={contact.linkedin} target="_blank" rel="noreferrer">
           <span>LINKEDIN</span>
+          <i aria-hidden="true">↗</i>
+        </a>
+        <a href={contact.github} target="_blank" rel="noreferrer">
+          <span>GITHUB / PINGMINUS</span>
           <i aria-hidden="true">↗</i>
         </a>
       </div>

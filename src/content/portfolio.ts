@@ -100,23 +100,27 @@ export const careerAnchors = [
   {
     period: "2024 — CURRENT",
     role: "FTXUI-FlySim",
+    href: "https://github.com/pingminus/FTXUI-FlySim",
     detail:
       "C++ / TUI / SIMULATION / REAL-TIME FLIGHT MECHANICS / INTERACTIVE CONTROL",
   },
   {
     period: "2025",
     role: "SafeGuard",
+    href: "https://github.com/pingminus/SafeGuard",
     detail:
       "GO / CLI / FILE ENCRYPTION / CRYPTOGRAPHY LEARNING / CROSS-PLATFORM TOOLING",
   },
   {
     period: "2025",
     role: "LazyMouse",
+    href: "https://github.com/pingminus/LazyMouse",
     detail: "C++ / WINDOWS INPUT / XINPUT / HCI / KEYBOARD + MOUSE MAPPING",
   },
   {
     period: "2025",
     role: "Lamidi",
+    href: "https://github.com/pingminus/Lamidi",
     detail: "HTML / JS / MIDI / LABY.NET / CLIENT-SIDE AUDIO + INTERACTION",
   },
 ];
@@ -148,4 +152,5 @@ export const humanSignals = [
 export const contact = {
   email: "niklasdioxid@gmail.com",
   linkedin: "https://www.linkedin.com/in/niklas-kost-6376063a7/",
+  github: "https://github.com/pingminus",
 };
