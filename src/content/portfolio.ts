@@ -69,7 +69,7 @@ export const chapters: Chapter[] = [
     number: "05",
     label: "EDUCATION",
     eyebrow: "LMU MÜNCHEN / COMPUTER SCIENCE",
-    title: "COMPUTATION",
+    title: "COMPUTERS",
     titleSecondary: "× MATHEMATICS",
     description: "Studying computer science at LMU Munich.",
     align: "right",
