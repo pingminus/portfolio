@@ -640,6 +640,9 @@ a:focus-visible {
 .chapter--infrastructure .signal-list {
   grid-column: 1 / 6;
 }
+.chapter--infrastructure .chapter__description {
+  transform: translateY(clamp(34px, 5vh, 62px));
+}
 .chapter--algorithm .signal-list {
   grid-column: 8 / 13;
   grid-row: 8 / 12;
@@ -716,6 +719,11 @@ a:focus-visible {
 }
 .chapter--horizon .chapter__description {
   grid-row: 8;
+  transform: translateY(clamp(82px, 8vh, 106px));
+}
+.chapter--horizon .contact-links {
+  grid-row: 10 / 12;
+  align-self: start;
 }
 
 .contact-links {
@@ -876,6 +884,9 @@ a:focus-visible {
   .chapter--infrastructure .chapter__title {
     font-size: clamp(3.35rem, 15vw, 5.4rem);
   }
+  .chapter--infrastructure .chapter__description {
+    transform: translateY(28px);
+  }
 
   .career-orbits {
     grid-column: 1 / 7;
@@ -954,6 +965,7 @@ a:focus-visible {
   }
   .chapter--horizon .chapter__description {
     grid-row: 8;
+    transform: translateY(54px);
   }
   .contact-links {
     grid-column: 1 / 7;
